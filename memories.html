@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎂 Birthday Wishes</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 100px; /* for fixed nav */
+      background: linear-gradient(to bottom right, #1e2746, #2f3d6c);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #112240;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 15px 0;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #6cbfff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    h1 {
+      color: #87cefa;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.5em;
+    }
+
+    .content {
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(108, 191, 255, 0.3);
+      line-height: 1.8;
+      font-size: 1.2em;
+      animation: fadeIn 2.5s ease;
+      text-align: center;
+    }
+
+    .cake {
+      position: relative;
+      width: 180px;
+      height: 200px;
+      margin: 20px auto;
+    }
+
+    .layer {
+      position: absolute;
+      height: 50px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(255, 180, 186, 0.3);
+    }
+
+    .bottom {
+      width: 180px;
+      background: #ffffba;
+      bottom: 0;
+      left: 0;
+    }
+
+    .middle {
+      width: 140px;
+      background: #ffdfba;
+      bottom: 55px;
+      left: 20px;
+    }
+
+    .top {
+      width: 100px;
+      background: #ffb3ba;
+      bottom: 110px;
+      left: 40px;
+    }
+
+    .frosting {
+      position: absolute;
+      width: 100%;
+      height: 15px;
+      top: -10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fff8dc;
+    }
+
+    .candle {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 30px;
+      background: #6cbfff;
+      border-radius: 2px;
+    }
+
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: gold;
+      border-radius: 50%;
+      animation: flicker 0.4s infinite alternate;
+      box-shadow: 0 0 15px gold;
+    }
+
+    @keyframes flicker {
+      from { transform: translateX(-50%) scale(1); opacity: 0.8; }
+      to { transform: translateX(-50%) scale(1.2); opacity: 1; }
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #6cbfff;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #3a8fd1;
+    }
+
+    .wish, .poem {
+      display: none;
+      animation: fadeIn 2s ease forwards;
+      margin-top: 30px;
+      color: #fff8dc;
+    }
+
+    .poem {
+      white-space: pre-wrap;
+      color: #ffeef2;
+    }
+
+    .back {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .back a {
+      color: #ffffff;
+      text-decoration: none;
+      background: #6cbfff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    .back a:hover {
+      background: #3a8fd1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #f1c40f;
+      animation: confettiAnimation 3s linear infinite;
+    }
+
+    @keyframes confettiAnimation {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="letter.html">Love Letter</a></li>
+      <li><a href="memories.html">Birthday Wishes</a></li>
+      <li><a href="pic1.html">My Dream </a></li>
+      <li><a href="album.html">Memories</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="love-piano.mp3.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Birthday Content -->
+  <div class="content">
+    <h1>🎉 Make a Wish, Usman!</h1>
+
+    <div class="cake">
+      <div class="layer top">
+        <div class="frosting"></div>
+        <div class="candle">
+          <div class="flame" id="flame"></div>
+        </div>
+      </div>
+      <div class="layer middle">
+        <div class="frosting"></div>
+      </div>
+      <div class="layer bottom">
+        <div class="frosting"></div>
+      </div>
+    </div>
+
+    <button onclick="blowOut()">Blow Out the Candle 🎂</button>
+
+    <div class="wish" id="wishMessage">
+      ✨ May your heart be full, your smile wide, and your dreams within reach. Happy Birthday, my love! 💖
+    </div>
+
+    <div class="poem" id="poemText">
+      <strong>Happy Birthday, Usman 💖</strong>
+
+      Usman, my love, my heart, my light,  
+      You make each day feel warm and right.  
+      With every smile, you make me see—  
+      How lucky I am, that you chose me.  
+
+      On your birthday, I just want to say,  
+      I’ll love you more with every day. 💕
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div class="back">
+    <a href="index.html">← Back to Welcome</a>
+  </div>
+
+  <script>
+    function blowOut() {
+      document.getElementById('flame').style.display = 'none';
+      setTimeout(() => {
+        document.getElementById('wishMessage').style.display = 'block';
+        document.getElementById('poemText').style.display = 'block';
+      }, 1000);
+
+      // Confetti effect
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.top = Math.random() * 100 + "vh";
+        confetti.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 3000);
+      }
+    }
+  </script>
+
+</body>
+</html>

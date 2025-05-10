@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Usman 💙</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 100px;
+      background: linear-gradient(to top right, #0b1f3a, #1a2c4e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0f7ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh; /* Updated from height: 100vh */
+    }
+
+    nav {
+      width: 100%;
+      background-color: #112240;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 12px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #6cbfff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    .message-box {
+      background: rgba(0, 20, 40, 0.85);
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(0, 120, 255, 0.5);
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+      z-index: 2;
+      margin-bottom: 20px; /* Adjusted spacing */
+    }
+
+    .message-box h1 {
+      color: #6cbfff;
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .message-box p {
+      color: #cbeaff;
+      font-size: 1.2em;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      z-index: 2;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px; /* Add bottom space */
+    }
+
+    .buttons a {
+      text-decoration: none;
+      color: white;
+      background: #6cbfff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #3a8fd1;
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #6cbfff;
+      transform: rotate(45deg);
+      animation: float 8s infinite ease-in;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #6cbfff;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="letter.html">Love Letter</a></li>
+      <li><a href="memories.html">Birthday Wishes</a></li>
+      <li><a href="pic1.html">My Dream </a></li>
+      <li><a href="album.html">Memories</a></li>
+    </ul>
+  </nav>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="love-piano.mp3.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Greeting Message -->
+  <div class="message-box">
+    <h1>Happy Birthday, Usman 💙</h1>
+    <p>
+      Under the moonlit sky and the soft whisper of stars,<br>
+      I send you all my love on your special day.<br><br>
+      💌 You mean the world to me, Usman.<br>
+      May your heart always shine as brightly as you do in mine.<br><br>
+      With all my love,<br>
+      <strong>Zainab 💫</strong>
+    </p>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="buttons">
+    <a href="letter.html">💌 Love Letter</a>
+    <a href="memories.html">🎂 Birthday Wishes</a>
+  </div>
+
+  <!-- Floating Hearts Animation -->
+  <div class="hearts"></div>
+
+  <script>
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 5) + 's';
+      heart.style.opacity = Math.random();
+      heart.style.transform = `scale(${0.5 + Math.random()}) rotate(45deg)`;
+      heart.style.bottom = '-20px';
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>

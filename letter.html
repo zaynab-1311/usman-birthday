@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Love Letter 💌</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 100px; /* for fixed nav */
+      background: linear-gradient(to bottom right, #1e2746, #2f3d6c);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #112240;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 15px 0;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #6cbfff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    .letter {
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(108, 191, 255, 0.3);
+      line-height: 1.8;
+      font-size: 1.2em;
+      animation: fadeIn 2.5s ease;
+    }
+
+    h1 {
+      color: #87cefa;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.5em;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    strong {
+      color: #ffe8f5;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    .back {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .back a {
+      color: #ffffff;
+      text-decoration: none;
+      background: #6cbfff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    .back a:hover {
+      background: #3a8fd1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #6cbfff;
+      transform: rotate(45deg);
+      animation: float 8s infinite ease-in;
+      opacity: 0.6;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #6cbfff;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+ 
+   <!-- Top Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="letter.html">Love Letter</a></li>
+      <li><a href="memories.html">Birthday Wishes</a></li>
+      <li><a href="pic1.html">My Dream </a></li>
+      <li><a href="album.html">Memories</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="love-piano.mp3.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Letter Content -->
+  <div class="letter">
+    <h1>💖 Happy Birthday, My Love 💖</h1>
+
+    <p>🎉 <strong>Happy Birthday to...</strong></p>
+    <p>My Love. 💘 My Reason to Smile. 😊<br>
+    My Lover. 💏 My Today, Tomorrow, and Always. 🕰️<br>
+    My Laughter. 😂 My Happy Place. 🏡<br>
+    My Favorite Human. 🫶 My Rock. 🪨<br>
+    My Heart and Soul. ❤️‍🔥 My One and Only. 💍<br>
+    My Whole World. 🌍 My Everything. 💞</p>
+
+    <p>To many more memories with you—<br><strong>I love you so much. 💌</strong></p>
+
+    <p>💬 When I say <strong>"I love you more"</strong>, I don’t just mean I love you more than you love me.</p>
+    <p>I mean I love you more than the bad days ahead of us.<br>
+    I love you more than any fight we will ever have.<br>
+    I love you more than the distance that might come between us.<br>
+    ❤️ I love you the most.</p>
+
+    <p>And I can’t wait to be with you—<strong>always and forever. 🔒</strong></p>
+    <p>💖 <em>És tudo para mim, amor da minha vida!</em> 🇵🇹<br><small>(You are everything to me, love of my life!)</small></p>
+
+    <p>✨ I still remember the very first time we met...<br>
+    How I fell in love with you and your smile. 😊<br>
+    How everything happened so unexpectedly.</p>
+
+    <p>🌌 We didn’t plan this, but it was destiny—<br>
+    Written before we even knew it.<br>
+    Because Allah knew we needed each other to be complete. 🤲</p>
+
+    <p>I am beyond blessed and deeply thankful<br>
+    That someone like you came into my life. 🙏</p>
+
+    <p><strong>Thank you...</strong><br>
+    Thank you for making me feel that I deserve love.<br>
+    That I deserve happiness.<br>
+    That I deserve someone as incredible as you. 💐</p>
+
+    <p>Thank you for loving me, completely—<br>
+    For accepting me, my past, my flaws, my mistakes.<br>
+    And please don’t forget—<br>
+    I accept you, exactly as you are. 💞</p>
+
+    <p>🕋 I pray to Allah to guide us always—<br>
+    Because you are the one I want to spend my life with.</p>
+
+    <p>I feel so lucky to have the kind of man<br>
+    Every girl dreams of. 🌟</p>
+
+    <p>Thank you for coming into my life.<br>
+    For loving me unconditionally. 💖<br>
+    For motivating me to feel beautiful every single day. 💫<br>
+    For holding my hand so tightly—<br>
+    Letting me know you’ll never let go. 🤝</p>
+
+    <p>Just know this:<br>
+    <strong>I love you with every ounce of my being. ❤️</strong><br>
+    You have me. My heart. My soul. <strong>Forever.</strong> 🔐</p>
+  </div>
+
+  <!-- Back Button -->
+  <div class="back">
+    <a href="index.html">← Back to Welcome</a>
+  </div>
+ <!-- Floating Hearts Animation -->
+  <div class="hearts"></div>
+
+  <script>
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 5) + 's';
+      heart.style.opacity = Math.random();
+      heart.style.transform = `scale(${0.5 + Math.random()}) rotate(45deg)`;
+      heart.style.bottom = '-20px';
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>

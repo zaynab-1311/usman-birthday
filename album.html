@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Album 💙</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 100px;
+      background: linear-gradient(to top right, #0b1f3a, #1a2c4e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0f7ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      width: 100%;
+      background-color: #112240;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 12px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #6cbfff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    h1 {
+      color: #6cbfff;
+      margin-bottom: 20px;
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .slideshow-container {
+      width: 90%;
+      max-width: 700px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slideshow-container img,
+    .slideshow-container video {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+      user-select: none;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .back-home {
+      margin: 30px;
+    }
+
+    .back-home a {
+      text-decoration: none;
+      color: white;
+      background: #6cbfff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: background 0.3s;
+    }
+
+    .back-home a:hover {
+      background: #3a8fd1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="letter.html">Love Letter</a></li>
+      <li><a href="memories.html">Birthday Wishes</a></li>
+      <li><a href="pic1.html">My Dream</a></li>
+      <li><a href="album.html">Memories</a></li>
+    </ul>
+  </nav>
+
+  <h1>Our Favorite Memories 💞</h1>
+
+  <div class="slideshow-container">
+  <!-- Slides -->
+  <div class="slide active">
+    <img src="pic2.jpg" alt="Memory 1">
+  </div>
+  <div class="slide">
+    <img src="pic3.jpg" alt="Memory 2">
+  </div>
+  <div class="slide">
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="slide">
+    <img src="pic4.jpg" alt="Memory 3">
+  </div>
+  <div class="slide">
+    <img src="pic5.jpg" alt="Memory 4">
+  </div>
+  <div class="slide">
+    <img src="pic6.jpg" alt="Memory 5">
+  </div>
+  <div class="slide">
+    <video controls>
+      <source src="video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Controls -->
+  <a class="prev" onclick="changeSlide(-1)">❮</a>
+  <a class="next" onclick="changeSlide(1)">❯</a>
+</div>
+
+
+  <div class="back-home">
+    <a href="index.html">🏠 Back to Home</a>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    // Swipe support (optional)
+    let startX = 0;
+    document.querySelector('.slideshow-container').addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.querySelector('.slideshow-container').addEventListener('touchend', e => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) changeSlide(1); // swipe left
+      else if (endX - startX > 50) changeSlide(-1); // swipe right
+    });
+  </script>
+
+</body>
+</html>
